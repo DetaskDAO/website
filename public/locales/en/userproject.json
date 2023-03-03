@@ -1,0 +1,17 @@
+{
+    "posted": "Posted Tasks",
+    "enrolling": "报名中的任务",
+    "ongoing": "Ongoing Tasks",
+    "ending": "已结束的任务",
+    "item": {
+        "num": "报名人数",
+        "amount": "任务预算",
+        "amount0": "可报价",
+        "period": "任务周期",
+        "skill": "技能要求",
+
+        "btn-edit": "编辑任务",
+        "btn-hide": "关闭任务",
+        "btn-open": "打开任务"
+    }
+}

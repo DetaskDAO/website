@@ -1,0 +1,4 @@
+[
+  "function ownerOf(uint256) view returns (address)",
+  "function tasks(uint256) view returns (tuple(string,string,string,uint8,uint64,uint32,uint48,uint48,bool))"
+]

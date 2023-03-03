@@ -1,0 +1,58 @@
+{
+  "id": "3690236",
+  "name": "detask",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "1727433",
+      "name": "209电话-圆框",
+      "font_class": "dianhua-yuankuang",
+      "unicode": "e8be",
+      "unicode_decimal": 59582
+    },
+    {
+      "icon_id": "26267561",
+      "name": "discord",
+      "font_class": "discord",
+      "unicode": "e60b",
+      "unicode_decimal": 58891
+    },
+    {
+      "icon_id": "4933141",
+      "name": "时间",
+      "font_class": "shijian",
+      "unicode": "e6c2",
+      "unicode_decimal": 59074
+    },
+    {
+      "icon_id": "4936986",
+      "name": "skype-fill",
+      "font_class": "skype-fill",
+      "unicode": "e882",
+      "unicode_decimal": 59522
+    },
+    {
+      "icon_id": "27365054",
+      "name": "facebook",
+      "font_class": "facebook",
+      "unicode": "ebfc",
+      "unicode_decimal": 60412
+    },
+    {
+      "icon_id": "27365309",
+      "name": "telegram",
+      "font_class": "telegram",
+      "unicode": "ec25",
+      "unicode_decimal": 60453
+    },
+    {
+      "icon_id": "32160852",
+      "name": "微信-copy",
+      "font_class": "weixin-copy-copy",
+      "unicode": "ec26",
+      "unicode_decimal": 60454
+    }
+  ]
+}

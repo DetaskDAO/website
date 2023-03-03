@@ -1,0 +1,57 @@
+{
+    "title": "DETASK - ",
+    "title2": "Trusted, decentralized development outsourcing services",
+    "btn1": "Post a task",
+    "btn2": "Explore task",
+    "number": {
+        "tasks": "Tasks",
+        "members": "Members",
+        "nft": "SBTs"
+    },
+    "advantage": {
+        "security": {
+            "title": "Security",
+            "content": "Development funds are hosted by an open source, secure smart contract on the chain, so you never have to worry about collecting money."
+        },
+        "credible": {
+            "title": "Credibleness",
+            "content": "SBT (Soul Bound Token) tracks project development and eliminates false resumes."
+        },
+        "openness": {
+            "title": "Openness",
+            "content": "With no licensing, no censorship, and token payments, you can publish your projects with confidence anytime, anywhere."
+        }
+    },
+    "ucan": {
+        "title": "Find developer/tasks",
+        "item1": {
+            "title": "Find developer",
+            "p1": "As a project owner, you are free to publish tasks.",
+            "p2": "Select developers by SBT certification.",
+            "p3": "Once a partnership is established, the tokens are hosted in a smart contract.",
+            "p4": "Track progress toward task completion."
+        },
+        "item2": {
+            "title": "Find tasks",
+            "p1": "As a developer, you can search for tasks that are right for you.",
+            "p2": "Estimated development fees obtained at the time of registration.",
+            "p3": "Once the collaboration is established, the developers do their best to complete the task.",
+            "p4": "Complete tasks, earn SBT, and build trust."
+        }
+    },
+    "comment": {
+        "title": "User praise",
+        "item1": {
+            "skill": "freelancer Web3 developer",
+            "content": "Detask is the best partner for Web3 development and I can always find the right person to complete my projects."
+        },
+        "item2": {
+            "skill": "Full Stack Developer",
+            "content": "I have always wanted to participate in the Web3 project, but I need a good search portal. Thank God, here it is! For those who want to participate in the Web3 project, this is really good. "
+        },
+        "item3": {
+            "skill": "Project Manager",
+            "content": "Detask - the Web3 community with Efficient, Fair, Credible and Valuable. Without the help of Detask, I might not find such suitable and capable talent to complete the project and achieve my goal. "
+        }
+    }
+}

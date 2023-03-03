@@ -1,0 +1,11 @@
+[
+  "constructor(address)",
+  "event OwnershipTransferred(address indexed,address indexed)",
+  "function background() view returns (string)",
+  "function owner() view returns (address)",
+  "function renounceOwnership()",
+  "function setBackground(string)",
+  "function taskAddr() view returns (address)",
+  "function tokenURI(uint256) view returns (string)",
+  "function transferOwnership(address)"
+]

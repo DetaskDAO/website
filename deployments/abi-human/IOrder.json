@@ -1,0 +1,3 @@
+[
+  "function hasTaskOrders(uint256) view returns (bool)"
+]

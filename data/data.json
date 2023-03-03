@@ -1,0 +1,68 @@
+{
+  "list": [
+    {"key":"0","label":"所有状态","url":"查看全部"},
+    {"key":"1","label":"招募中","url":"查看招募中"},
+    {"key":"2","label":"开发中","url":"查看招募中"},
+    {"key":"3","label":"已结束","url":"查看招募中"},
+    {"key":"4","label":"已取消","url":"查看招募中"}
+  ],
+  "skills": [
+    {"value":null,"name":"全部"},
+    {"value":"1","name":"Development"},
+    {"value":"2","name":"Product"},
+    {"value":"3","name":"Design"},
+    {"value":"4","name":"Testing"},
+    {"value":"5","name":"Writing"},
+    {"value":"6","name":"Marketing"},
+    {"value":"7","name":"Research"},
+    {"value":"8","name":"Operation"},
+    {"value":"9","name":"Translation"},
+    {"value":"10","name":"Training"},
+    {"value":"11","name":"Services"},
+      
+    {"value":"20","name":"Web Frontend"},
+    {"value":"21","name":"Backend"},
+    {"value":"22","name":"Desktop Apps"},
+    {"value":"23","name":"Android/iOS"},
+    {"value":"24","name":"Auto/Bots"},
+    {"value":"25","name":"Mini Program"},
+    {"value":"26","name":"Full Stack"},
+    {"value":"27","name":"DevOps"},
+    {"value":"28","name":"Data Analysts"},
+    {"value":"29","name":"Blockchain"},  
+    {"value":"30","name":"AI/ML"},  
+
+    {"value":"40","name":"JavaScript"},
+    {"value":"41","name":"Python"},
+    {"value":"42","name":"Java"},
+    {"value":"43","name":"Golang"},
+    {"value":"44","name":"Solidity"},
+    {"value":"45","name":"Rust"},
+    {"value":"46","name":"C/C++"},
+    {"value":"47","name":"PHP"},
+    {"value":"48","name":".Net"},
+    {"value":"49","name":"SQL"},  
+    {"value":"50","name":"Move"},  
+    {"value":"51","name":"HTML/CSS"},  
+
+    {"value":"61","name":"Hardhat"},
+    {"value":"62","name":"Defi"},
+    {"value":"63","name":"NFT"},
+    {"value":"64","name":"Spring"},
+    {"value":"65","name":"Laravel"},
+    {"value":"66","name":"React"},
+    {"value":"67","name":"Vue.js"}
+  ],
+  "inner": [
+    {"title": "title", "name": "项目名称", "value": "", "status": "", "help": "", "type": "input"},
+    {"title": "budget", "name": "项目预算", "value": "", "status": "", "help": "", "type": "number"},
+    {"title": "period", "name": "项目周期", "value": "", "status": "", "help": "", "type": "number"},
+    {"title": "desc", "name": "项目描述", "value": "", "status": "", "help": "", "type": "text"},
+    {"title": "attachment", "name": "相关文档", "value": ""},
+    {"title": "role", "name": "选择具体角色", "value": [], "list": []},
+    {"title": "task_type", "name": "选择您的项目类型（可多选）", "value": [], "list": []}
+  ],
+  "symbol": [
+    {"title": "BTC"}
+  ]
+}

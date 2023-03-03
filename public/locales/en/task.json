@@ -1,0 +1,230 @@
+{
+    "title": "Publish tasks and describe task demands",
+    "subtitle": "A detailed description of requirements allows developers to understand your demands and increase the intention to sign up.",
+    "detail-title": "Task details",
+    "all": "ALL",
+    "mao": ":",
+    "issuer": "Hirer",
+    "worker": "Developer",
+    "gosbt": "View SBT",
+    "task": {
+        "name": "Task title",
+        "desc": "Task description",
+        "file": "Files",
+        "upload": "Please upload images or documents that could be helpful in explaining your demands (Max file size: 20 MB).",
+        "skill": "Required skills",
+        "amount": "Task budget",
+        "period": "Task duration",
+        "quotation": "Quoted by developer",
+        "tips-skill": "Please select required skills",
+        "day": "days",
+        "applynum": "Enrollment",
+        "ago": {
+            "created": "Created ",
+            "s": "seconds ago",
+            "m": "minutes ago",
+            "h": "hours ago",
+            "d": "days ago"
+        },
+        "tips": {
+            "name": "Please enter a task title",
+            "desc": "Please describe your demands in detail.",
+            "amount": "Please enter the budget",
+            "period": "Please select the estimated duration"
+        }
+    },
+    "btn": "Post a task",
+    "btnmodify": "Modify task",
+    "btn-view": "View task",
+    "btn-apply": "Apply",
+    "btn-cancel": "Cancel registration",
+    "btn-modify": "Edit",
+    "btn-update": "Update",
+    "btn-stage": "Phase division",
+    "tip-stage": "The hirer invites you to submit a \"Phase division\".",
+    "modal": {
+        "title": "Preview",
+        "btn": "Confirm Posting"
+    },
+    "modal-apply": {
+        "title": "Apply to participate",
+        "subtitle": "Application information",
+        "amount": "Your offer",
+        "period": "Estimated development time",
+        "social": "Social account",
+        "social-tip": "Fill out your usual social accounts to make it easier for the hirer to contact you.",
+        "social-subtitle": "The Hirer can contact you via social accounts",
+        "tj": "Self-recomandation"
+    },
+
+    "filter": "Filter by",
+    "search": "Search tasks",
+
+    "header": {
+        "home": "Home",
+        "task": "Explore",
+        "wallet": "Connect Wallet",
+        "disconnect": "Disconnect",
+        "message": "Notification",
+        "view": "See All",
+        "allmessage": "All Notification",
+        "user1": "Profile",
+        "user2": "Posted Tasks",
+        "user3": "Applied Tasks",
+        "user4": "My SBT"
+    },
+
+    "userproject": {
+        "posted": "Posted tasks",
+        "apply": "Applied tasks",
+        "ongoing": "Ongoing tasks",
+        "closed": "Closed tasks",
+        "btn-close": "Close the task",
+        "btn-open": "Open the task",
+        "btn-edit": "Edit task",
+        "btn-withdraw": ""
+    },
+
+    "step1": "Post task",
+    "step2": "Invite developers",
+    "step3": "Task phasing",
+    "step4": "Confirm collaboration",
+    "step5": "In development",
+    "step6": "All done",
+    "applylist": {
+        "title": "The following developers are interested in working on your task",
+        "subtitle": "* You can invite more than one developer to participate in your task. If a developer does not submit a “Phase division” within 5 days, that developer will be considered to have dropped out of the collaboration.",
+        "skill": "Skills",
+        "amount": "Post a quote",
+        "btn-invited": "Invited",
+        "btn-invite": "Invite collaboration",
+        "btn-refuse": "Not suitable",
+        "modal": {
+            "title": "Provide your budget",
+            "subtitle": "Invite developers to submit a “Phase division” for your task.",
+            "btn": "Invite developers"
+        }
+    },
+
+    "order": {
+        "title": "Phase division",
+        "model": {
+            "title": "Pay model",
+            "model1": "Pay-by-time model",
+            "model2": "Acceptance pay model"
+        },
+        "payment": "Prepayment",
+        "cost": "Phase cost",
+        "name": "Phase title",
+        "fee": "Fee",
+        "total": "Total cost",
+        "btn-agree": "Agree",
+        "btn-cancel": "Decline collaboration",
+        "btn-submit": "Submit",
+        "btn-resubmit": "Resubmit",
+        "btn-add": "Add phase",
+        "btn-change": "Submit change",
+        "btn-withdraw": "Draw money",
+        "btn-withdrawal": "Withdrawal successful",
+
+        "btn-delivery": "Submit delivery",
+        "btn-redelivery": "Resubmit",
+        "delivery-length": "Length of delivery",
+        "delivery-date": "Delivery date",
+        "delivery-note": "Delivery notes",
+        "delivery-title": "Delivery content",
+        "file": "Files",
+        "desc": "Description",
+        "confirm": "Confirm",
+        "cancel": "Cancel",
+        "status1": "Not started",
+        "status2": "In progress",
+        "status3": "Completed",
+        "status4": "Terminated",
+        "modal-modify": {
+            "ok": "I got it"
+        },
+        "modal-withdraw": {
+            "title": "Claim fee details",
+            "btn": "Draw Money"
+        },
+        "modal-abort": {
+            "title": "Termination",
+            "btn-cancel": "Cancel",
+            "btn-confirm": "Confirm termination",
+            "subtitle": "Incomplete phases",
+            "issuer": {
+                "title": "Terminate the collaboration and return the uncompleted phases.",
+                "l": "will be returned"
+            },
+            "worker": {
+                "title": "Incomplete stages will be returned to the requestor.",
+                "l1": "Continue to complete the task and you will receive ",
+                "l2": "Cancel the progress you will not receive the fee, confirm cancellation?"
+            }
+        }
+    },
+    "ongoing": {
+        "request": {
+            "delay": "Request an extension",
+            "abort": "Termination",
+            "accept": "Confirm acceptance"
+        },
+        "modal":{
+            "delay": {
+                "title": "Select extension time",
+                "tips": "Please communicate with the {{who}} in advance, and the {{who}} will agree before it takes effect.",
+                "btn": "Submit request",
+                "btn-cancel": "Cancel the extension",
+                "btn-agree": "Extension granted",
+                "btn-refuse": "Extension denied"
+            },
+            "upload": {
+                "title": "Upload delivery content",
+                "subtitle": "Upload the delivery content, you can insert the document link.",
+                "tips": "Upload the file (it is recommended to upload an encrypted attachment. (e.g. zip, file size within 20MB)",
+                "btn-submit": "Submit",
+                "btn-cancel": "Cancel"
+            }
+        },
+        "tips": {
+            "delay": {
+                "p1": "You are requesting a ",
+                "p2": "-day extension to delay delivery until ",
+                "p3": ", you can contact the {{who}} to confirm."
+            },
+            "delay-b": {
+                "p1": "{{who}} has requested a {{day}}-day extension to delay delivery to {{date}}"
+            }
+        }
+    },
+
+    "tips": {
+        "WaitWorkerStage": "Developers have not submitted ”Phasing“, please wait, or you can contact developers to communicate specific needs and determine “Task Schedule Planning”."
+    },
+
+    "user": {
+        "none": "no bio",
+        "edit": "Edit profile",
+        "title": "Task record",
+        "subtitle1": "Completed tasks",
+        "subtitle2": "Posted tasks",
+        "nodata": "No task record",
+        "btn1": "Post a task",
+        "btn2": "Explore task",
+        "modal": {
+            "title": "Edit profile",
+            "save": "Save profile",
+            "avatar1": "Recommend to upload images in JPEG/PNG/Gif format.",
+            "avatar2": "The file size should not exceed 4MB.",
+            "upload": "Upload",
+            "name": "User name",
+            "name-t": "Type your username",
+            "bio": "Bio",
+            "bio-t": "Add a bio",
+            "social": "Social account",
+            "social-t": "At least one",
+            "social-i": "Enter your {{name}} account"
+        }
+    }
+}

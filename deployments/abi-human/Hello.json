@@ -1,0 +1,4 @@
+[
+  "function setVaule(uint256)",
+  "function value() view returns (uint256)"
+]

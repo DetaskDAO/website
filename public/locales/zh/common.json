@@ -1,0 +1,14 @@
+{
+    "home": {
+      "Home title": "你好",
+      "Home description": "你好 description"
+    },
+    "about": {
+      "About title": "你好 title",
+      "About description": "你好 description"
+    },
+    "header": {
+      "Home": "你好",
+      "About": "关于"
+    }
+  }

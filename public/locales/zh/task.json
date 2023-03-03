@@ -1,0 +1,231 @@
+{
+    "title": "发布任务，描述任务需求",
+    "subtitle": "详细的需求描述可以让开发者了解你的需求，提高报名意向。",
+    "detail-title": "任务详情",
+    "all": "全部",
+    "mao": "：",
+    "issuer": "需求方",
+    "worker": "开发者",
+    "gosbt": "查看 SBT",
+    "task": {
+        "name": "任务名称",
+        "desc": "任务描述",
+        "file": "文档",
+        "upload": "请上传有助于解释您需求的图像或文档。（文件最大20MB）",
+        "skill": "技能要求",
+        "amount": "任务预算",
+        "period": "任务周期",
+        "quotation": "由开发者报价",
+        "tips-skill": "请选择技能要求",
+        "day": "天",
+        "applynum": "报名人数",
+        "ago": {
+            "created": "",
+            "s": "秒前发布",
+            "m": "分钟前发布",
+            "h": "小时前发布",
+            "d": "天前发布"
+        },
+        "tips": {
+            "name": "请输入任务标题",
+            "desc": "请详细描述你的需求",
+            "amount": "请输入预算",
+            "period": "请选择预计周期"
+        }
+    },
+    "btn": "发布任务",
+    "btnmodify": "修改任务",
+    "btn-view": "查看任务",
+    "btn-apply": "报名",
+    "btn-cancel": "取消报名",
+    "btn-modify": "修改报名信息",
+    "btn-update": "修改报名信息",
+    "btn-stage": "阶段划分",
+    "tip-stage": "需求方邀请你提交「阶段划分」",
+    "modal": {
+        "title": "预览",
+        "btn": "确认发布"
+    },
+    "modal-apply": {
+        "title": "报名参与",
+        "subtitle": "报名信息",
+        "amount": "你的报价",
+        "period": "预计开发时间",
+        "social": "社交账号",
+        "social-tip": "填写你常用的社交账号，方便需求方与你联系。",
+        "social-subtitle": "需求方可通过社交账号联系你",
+        "tj": "自我推荐"
+    },
+
+    "filter": "筛选",
+    "search": "搜索任务",
+
+    "header": {
+        "home": "首页",
+        "task": "寻找任务",
+        "wallet": "连接钱包",
+        "disconnect": "断开连接",
+        "message": "通知",
+        "view": "查看全部",
+        "allmessage": "全部通知",
+        "user1": "个人资料",
+        "user2": "发布的任务",
+        "user3": "报名的任务",
+        "user4": "我的SBT"
+    },
+
+    "userproject": {
+        "posted": "发布的任务",
+        "apply": "报名的任务",
+        "ongoing": "进行中的任务",
+        "closed": "已结束的任务",
+        "btn-close": "关闭任务",
+        "btn-open": "打开任务",
+        "btn-edit": "编辑任务",
+        "btn-withdraw": ""
+    },
+
+    "step1": "发布任务",
+    "step2": "邀请开发者",
+    "step3": "任务阶段划分",
+    "step4": "确认合作",
+    "step5": "开发中",
+    "step6": "完成",
+    "applylist": {
+        "title": "以下开发者有意向参与你的任务",
+        "subtitle": "* 你可邀请多人参与你的任务，5天内开发者没有提交「阶段划分」，将视为该开发者放弃合作。",
+        "skill": "技能",
+        "amount": "报价",
+        "btn-invited": "已邀请",
+        "btn-invite": "邀请合作",
+        "btn-refuse": "暂不合适",
+        "modal": {
+            "title": "给出你的预算",
+            "subtitle": "邀请开发者对你的任务提交「阶段划分」。",
+            "btn": "邀请"
+        }
+    },
+
+    "order": {
+        "title": "阶段划分",
+        "model": {
+            "title": "付款模式",
+            "model1": "按期付款模式",
+            "model2": "验收付款模式"
+        },
+        "payment": "预付款",
+        "cost": "阶段费用",
+        "name": "阶段名称",
+        "fee": "费用",
+        "total": "总费用",
+        "btn-agree": "同意",
+        "btn-cancel": "放弃合作",
+        "btn-submit": "提交",
+        "btn-resubmit": "重新提交",
+        "btn-add": "增加阶段",
+        "btn-change": "提交修改",
+        "btn-withdraw": "取款",
+        "btn-withdrawal": "已取款",
+
+        "btn-delivery": "提交交付",
+        "btn-redelivery": "重新提交",
+        "delivery-length": "交付时长",
+        "delivery-date": "交付日期",
+        "delivery-note": "交付说明",
+        "delivery-title": "交付内容",
+        "file": "文件",
+        "desc": "描述",
+        "confirm": "确认",
+        "cancel": "取消",
+        "status1": "未开始",
+        "status2": "进行中",
+        "status3": "已完成",
+        "status4": "已终止",
+        "modal-modify": {
+            "ok": "我知道了"
+        },
+
+        "modal-withdraw": {
+            "title": "取款详情",
+            "btn": "取款"
+        },
+        "modal-abort": {
+            "title": "终止",
+            "btn-cancel": "取消",
+            "btn-confirm": "确认终止",
+            "subtitle": "未完成的阶段",
+            "issuer": {
+                "title": "终止合作将进行结算，未完成的阶段将退回",
+                "l": "将退回"
+            },
+            "worker": {
+                "title": "未完成的阶段将退回给给需求方",
+                "l1": "继续完成任务，你可领取",
+                "l2": "终止进度你将不能获取费用，确认终止吗？"
+            }
+        }
+    },
+    "ongoing": {
+        "request": {
+            "delay": "请求延期",
+            "abort": "终止",
+            "accept": "确认验收"
+        },
+        "modal":{
+            "delay": {
+                "title": "选择延长时间",
+                "tips": "请与{{who}}提前沟通，{{who}}同意后才可生效。",
+                "btn": "发送请求",
+                "btn-cancel": "取消延期",
+                "btn-agree": "同意延期",
+                "btn-refuse": "拒绝延期"
+            },
+            "upload": {
+                "title": "提交交付内容",
+                "subtitle": "上传交付内容，可粘贴文档链接。",
+                "tips": "上传文件（建议上传加密附件。如zip，文件大小在20MB以内）",
+                "btn-submit": "提交",
+                "btn-cancel": "取消"
+            }
+        },
+        "tips": {
+            "delay": {
+                "p1": "你请求延期",
+                "p2": "天，延迟到",
+                "p3": "交付，可联系{{who}}确认。"
+            },
+            "delay-b": {
+                "p1": "{{who}}请求延期{{day}}天，延迟到{{date}}交付"
+            }
+        }
+    },
+
+    "tips": {
+        "WaitWorkerStage": "开发者未提交「阶段划分」，请等待，也可联系开发者沟通具体需求，确定「阶段划分」"
+    },
+
+    "user": {
+        "none": "无信息",
+        "edit": "编辑简介",
+        "title": "任务记录",
+        "subtitle1": "完成的任务",
+        "subtitle2": "发布的任务",
+        "nodata": "无任务记录",
+        "btn1": "发布任务",
+        "btn2": "寻找任务",
+        "modal": {
+            "title": "编辑简介",
+            "save": "保存",
+            "avatar1": "建议上传JPEG/PNG/Gif格式的图片，",
+            "avatar2": "文件大小不超过4MB。",
+            "upload": "上传",
+            "name": "用户名",
+            "name-t": "输入用户名",
+            "bio": "个人简介",
+            "bio-t": "添加个人简介",
+            "social": "社交账号",
+            "social-t": "至少一个",
+            "social-i": "输入{{name}}账号"
+        }
+    }
+}

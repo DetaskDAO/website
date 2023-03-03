@@ -1,0 +1,238 @@
+
+.Publish{
+    padding-top: 68px;
+    .ant-spin-nested-loading{
+        div {
+            .ant-spin {
+                .ant-spin-text{
+                    position: fixed;
+                }
+                .ant-spin-dot{
+                    position: fixed;
+                }   
+            }
+        }
+
+    }
+    .banner{
+        height: 226px;
+        background-color: #1F1E2E;
+        .banner-content{
+            width: 1000px;
+            margin: 0 auto;
+            color: white;
+            padding: 30px 37px 0;
+            .title{
+                font-size: 38px;
+                font-weight: 600;
+                line-height: 53px;
+                letter-spacing: 0.8px;
+            }
+            .subtitle{
+                margin-top: 5px;
+                font-size: 16px;
+                line-height: 22px;
+                letter-spacing: 0.9px;
+            }
+        }
+    }
+    .content{
+        width: 100%;
+        height: 1275px;
+        box-sizing: content-box;
+        padding-bottom: 100px;
+        background-color: white;
+        position: relative;
+        .content-panel{
+            width: 1000px;
+            // height: 1361px;
+            padding: 39px 37px;
+            position: absolute;
+            left: calc((100% - 1000px) / 2);
+            top: calc(140px - 226px);
+            background: #FFFFFF;
+            box-shadow: 0px 0px 44px -24px #7C7879;
+            border-radius: 30px;
+            .ant-form{
+                height: 100%;
+            }
+        }
+        .item{
+            margin-bottom: 53px;
+
+            .item-nav{
+                display: flex;
+                align-items: center;
+                .nav-box{
+                    margin-left: 20px;
+                }
+            }
+            &:nth-child(1){
+                margin-bottom: 53px;
+            }
+            &:nth-child(2){
+                margin-bottom: 10px;
+            }
+            &:nth-child(7){
+                .item-title{
+                    letter-spacing: 2.28px;
+                }
+            }
+            &:last-child{
+                margin: 100px auto 50px;
+                display: flex;
+                justify-content: center;
+            }
+            .item-title{
+                margin-bottom: 13px;
+                font-size: 24px;
+                font-weight: 500;
+                color: #1F1E2E;
+                line-height: 33px;
+                letter-spacing: 0.86px;
+            }
+            .item-input{
+                width: 900px;
+                height: 45px;
+                border-radius: 10px;
+            }
+            .item-text{
+                width: 900px;
+                height: 330px;
+                border-radius: 10px;
+            }
+            .item-num{
+                .ant-input-number{
+                    width: 279px;
+                    margin-right: 13px;
+                    border-radius: 10px;
+                    input{
+                        height: 53px;
+                    }
+                }
+                .ant-input-number-group-addon{
+                    width: 136px;
+                    height: 53px;
+                    border-radius: 10px;
+                    border: 1px solid #d9d9d9;
+                    background-color: white;
+                }
+                .ant-select-selection-item{
+                    font-size: 20px;
+                    font-weight: 500;
+                    color: #1F1E2E;
+                    line-height: 28px;
+                    letter-spacing: 1.18px;
+                }
+            }
+            .item-upload{
+
+                .ant-btn-default{
+                    width: 644px;
+                    height: 68px;
+                    overflow: hidden;
+                    border-radius: 10px;
+                    border: 1px dashed #979797;
+                    display: flex;
+                    align-items: center;
+                    line-height: 17px;
+                }
+                .img{
+                    width: 39px;
+                    height: 32px;
+                    // background-color: yellowgreen;
+
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 32px;
+                    color: #979797;
+                }
+                .p{
+                    width: 543px;
+                    margin-left: 15px;
+                    font-size: 12px;
+                    color: #6C6C6C;
+                    letter-spacing: 1.14px;
+                    text-align: left;
+                    white-space: normal;
+                }
+                // 删除图片按钮
+                .ant-upload-list-item-card-actions{
+                    position: absolute;
+                    top: 5px;
+                    right: 5px;
+                    .anticon-delete{
+                        font-size: 20px;
+                    }
+                }
+            }
+            .item-ul{
+                display: flex;
+                flex-wrap: wrap;
+                .li{
+                    padding: 14px 18px;
+                    margin-right: 24px;
+                    margin-bottom: 14px;
+                    background-color: #EFEFEF;
+                    border-radius: 10px;
+
+                    color: #1F1E2E;
+                    font-size: 18px;
+                    font-weight: 500;
+                    line-height: 25px;
+                    letter-spacing: 1.7px;
+                    cursor: pointer;
+                    transition: background-color 0.2s, color 0.2s;
+                }
+                .active{
+                    background-color: #1F1E2E;
+                    color: white;
+                }
+            }
+            .item-select{
+                width: 279px;
+                .ant-select-selector{
+                    height: 53px;
+                    border-radius: 10px;
+                }
+                .ant-select-selection-item{
+                    // text-align: center;
+                    line-height: 51px;
+                }
+            }
+            .ant-select-arrow{
+                font-size: 15px;
+                font-weight: 800;
+                color: #1F1E2E;
+            }
+            input, textarea, .ant-select-selection-item{
+                font-size: 18px;
+                color: #1F1E2E;
+                line-height: 22px;
+                letter-spacing: 1px;
+            }
+        }
+        .item-poa{
+            margin-bottom: 0;
+            position: absolute;
+            left: calc((100% - 280px) / 2);
+            bottom: 71px;
+        }
+        .panel-{
+            height: 90px;
+            padding: 25px 80px;
+            border: none;
+            border-radius: 45px;
+            box-shadow: 0px 0px 19px -5px #898989;
+            line-height: 40px;
+            letter-spacing: 2.66px;
+            font-weight: 400;
+            font-size: 28px;
+        }
+        .panel-btn{
+            background-color: #1F1E2E;
+            color: #FFFFFF;
+        }
+    }
+}
