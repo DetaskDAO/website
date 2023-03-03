@@ -1,6 +1,6 @@
 {
     "title": "DETASK - ",
-    "title2": "Trusted, decentralized development outsourcing services",
+    "title2": "Trust Web3 Freelance Solution",
     "btn1": "Post a task",
     "btn2": "Explore task",
     "number": {
@@ -11,43 +11,43 @@
     "advantage": {
         "security": {
             "title": "Security",
-            "content": "Development funds are hosted by an open source, secure smart contract on the chain, so you never have to worry about collecting money."
+            "content": "Funds are escrowed in open-source, secure smart contracts, and cannot be diverted for other purposes."
         },
         "credible": {
-            "title": "Credibleness",
-            "content": "SBT (Soul Bound Token) tracks project development and eliminates false resumes."
+            "title": "Credible",
+            "content": "Each task will be issued with SBT to form an immutable reputation, you can find the most suitable developer."
         },
         "openness": {
             "title": "Openness",
-            "content": "With no licensing, no censorship, and token payments, you can publish your projects with confidence anytime, anywhere."
+            "content": "No permission, no censorship, with token payments, be free to post the tasks at anytime, anywhere."
         }
     },
     "ucan": {
         "title": "Find developer/tasks",
         "item1": {
             "title": "Find developer",
-            "p1": "As a project owner, you are free to publish tasks.",
-            "p2": "Select developers by SBT certification.",
-            "p3": "Once a partnership is established, the tokens are hosted in a smart contract.",
-            "p4": "Track progress toward task completion."
+            "p1": "As a project owner, be free to post a task.",
+            "p2": "Choose developer by SBT credentialing.",
+            "p3": "Pay with token , controled by smart contract.",
+            "p4": "Track progress until task completion."
         },
         "item2": {
             "title": "Find tasks",
-            "p1": "As a developer, you can search for tasks that are right for you.",
-            "p2": "Estimated development fees obtained at the time of registration.",
-            "p3": "Once the collaboration is established, the developers do their best to complete the task.",
+            "p1": "As a developer, you can explore task.",
+            "p2": "Offer the bid with a plan.",
+            "p3": "Try best to do the task.",
             "p4": "Complete tasks, earn SBT, and build trust."
         }
     },
     "comment": {
-        "title": "User praise",
+        "title": "User comments",
         "item1": {
-            "skill": "freelancer Web3 developer",
+            "skill": "Freelancer Web3 developer",
             "content": "Detask is the best partner for Web3 development and I can always find the right person to complete my projects."
         },
         "item2": {
             "skill": "Full Stack Developer",
-            "content": "I have always wanted to participate in the Web3 project, but I need a good search portal. Thank God, here it is! For those who want to participate in the Web3 project, this is really good. "
+            "content": "I always want to participate in the Web3 project, but I need a good search portal. Thank God, here it is! For those who want to participate in the Web3 project, this is really good. "
         },
         "item3": {
             "skill": "Project Manager",
