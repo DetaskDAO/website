@@ -1,25 +1,27 @@
 import { CloseOutlined } from "@ant-design/icons"
 import { useRequest } from "ahooks";
 import { Button, Modal } from "antd"
-import { useTranslation } from "next-i18next";
+// import { useTranslation } from "react-i18next";
+import { useTranslation } from "react-i18next";
+
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { useAccount, useConnect, useNetwork, useSigner, useSwitchNetwork } from "wagmi";
-import { getJwt } from "../../utils/GetJwt";
-import { GetSignature } from "../../utils/GetSignature";
+import { GetSignature } from "@/utils/GetSignature";
+import { constans } from "@/utils/constans";
 
 
 export default function ConnectModal(params) {
     
     const { t } = useTranslation("task");
-    const { setStatus, status, propsInit } = params;
+    const { setStatus, status } = params;
     const { connect, connectors } = useConnect();
-    const { address, isConnecting } = useAccount();
+    const { address } = useAccount();
     const router = useRouter();
+    const { getToken: token } = constans();
     let [cacheAddr, setCacheAddr] = useState();
     // 签名
     const { data: signer } = useSigner();
-    const [message, setMessage] = useState();
     // 链
     const { chain } = useNetwork();
     const chainID = process.env.NEXT_PUBLIC_DEVELOPMENT_CHAIN_ID || process.env.NEXT_PUBLIC_PRODUCTION_CHAIN_ID
@@ -51,15 +53,8 @@ export default function ConnectModal(params) {
     }
 
     const init = () => {
-        const token = localStorage.getItem(`session.${address.toLowerCase()}`);
-        if (!token) {
-            getToken()
-        }else{
-            // 判断token有效期
-            let status = getJwt(token);
-            if (!status) {
-                getToken();
-            }
+        if (!token()) {
+            getToken();
         }
     }
     async function isRun() {

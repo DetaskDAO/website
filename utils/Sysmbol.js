@@ -1,9 +1,9 @@
 
 export function Sysmbol(params) {
     const chainName = process.env.NEXT_PUBLIC_DEVELOPMENT_CHAIN;
-    const DeOrder = require(`../../deployments/${chainName}/DeOrder.json`).address;
-    const dUSDT = require(`../../deployments/${chainName}/dUSDT.json`).address;
-    const WETH = require(`../../deployments/${chainName}/WETH.json`).address;
+    const DeOrder = process.env.NEXT_PUBLIC_CONTRACT_DEORDER;
+    const dUSDT = process.env.NEXT_PUBLIC_CONTRACT_USDC;
+    // const WETH = process.env.NEXT_PUBLIC_CONTRACT_USDC;
 
-    return { DeOrder, dUSDT, WETH}
+    return { DeOrder, dUSDT}
 }

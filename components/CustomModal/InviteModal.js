@@ -1,8 +1,8 @@
 import { Button, InputNumber, message, Modal, Select } from "antd";
-import { useTranslation } from "next-i18next";
+import { useTranslation } from "react-i18next";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { CurrencyMin } from "../../utils/Currency";
+import { CurrencyMin } from "@/utils/Currency";
 const { Option } = Select;
 export default function InviteModal(params) {
     
@@ -18,7 +18,7 @@ export default function InviteModal(params) {
           onChange={e => changeToken(e)}
         >
           <Option key="1" value="0x0000000000000000000000000000000000000000">MATIC</Option>
-          <Option key="2" value={process.env.NEXT_PUBLIC_USD}>USDT</Option>
+          <Option key="2" value={process.env.NEXT_PUBLIC_CONTRACT_USDC}>USDC</Option>
         </Select>
     );
 

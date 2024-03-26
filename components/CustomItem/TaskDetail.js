@@ -1,9 +1,10 @@
 import { FilePdfOutlined } from "@ant-design/icons";
-import { useTranslation } from "next-i18next";
 import { useEffect, useState } from "react";
-import { getSillTreeMap } from "../../http/_api/task";
-import { deform_Skills } from "../../utils/Deform";
-import { download } from "../../utils/download";
+import { getSillTreeMap } from "@/request/_api/task";
+import { deform_Skills } from "@/utils/Deform";
+import { download } from "@/utils/download";
+import { useTranslation } from "react-i18next";
+import i18n from 'i18next';
 
 export default function TaskDetail(params) {
     
@@ -68,7 +69,7 @@ export default function TaskDetail(params) {
                             deform_Skills(task.role, skill).map(e => 
                                 <div className="box" key={e.index}>
                                     {
-                                        location.pathname.indexOf("/zh") === -1 ? e.en : e.zh
+                                        i18n.language === 'en' ? e.en : e.zh
                                     }
                                 </div>
                             )

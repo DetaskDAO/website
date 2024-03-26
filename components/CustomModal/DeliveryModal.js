@@ -1,6 +1,6 @@
 import { FolderAddOutlined } from "@ant-design/icons";
 import { Button, Input, message, Modal, Upload } from "antd";
-import { useTranslation } from "next-i18next";
+import { useTranslation } from "react-i18next";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { uploadProps } from "../upload/config";

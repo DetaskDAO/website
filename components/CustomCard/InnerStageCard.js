@@ -1,6 +1,5 @@
-import { useRequest, useSetState } from "ahooks";
 import { Button, Tabs } from "antd";
-import { useTranslation } from "next-i18next";
+import { useTranslation } from "react-i18next";
 import { useEffect, useState } from "react";
 import StageInner from "../CustomItem/StageInner";
 import OutputStageCard from "./OutputStageCard";
@@ -187,7 +186,7 @@ export default function InnerStageCard(params) {
             <div className="stageList">
             {
                 !dataViewModel ? 
-                <OutputStageCard edit={onChange} remove={remove} cache={inner} isEdit={edit} />
+                <OutputStageCard edit={onChange} remove={remove} cache={inner} isEdit={edit} token={token} />
                 :
                 <Tabs 
                     type="editable-card" 

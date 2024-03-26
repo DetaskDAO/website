@@ -1,11 +1,11 @@
-import { Empty, message } from "antd";
-import { useTranslation } from "next-i18next";
+import { Empty } from "antd";
+// import { useTranslation } from "react-i18next";
+import { useTranslation } from "react-i18next";
 import { useRouter } from "next/router";
-import { useEffect } from "react";
-import { readMsg } from "../../http/_api/user";
+import { readMsg } from "@/request/_api/user";
 import {
     DoubleRightOutlined
-  } from '@ant-design/icons';
+} from '@ant-design/icons';
 
 
 
@@ -27,10 +27,6 @@ export default function MessagePopover(params) {
             }
         })
     }
-
-    useEffect(() => {
-        console.log(messageList);
-    },[messageList])
 
     return <div className="messagePopover">
         <div className="nav">

@@ -1,30 +1,26 @@
 import { useEffect, useState } from "react";
 import { useAccount } from "wagmi";
-import { getUserInfo } from "../http/_api/user";
+import { getUserInfo } from "@/request/_api/user";
 import UserSocialMedia from "../components/CustomItem/UserSocialMedia";
 import { FormOutlined } from "@ant-design/icons";
-import { Button, Input, Modal, Pagination } from "antd";
+import { Button, Modal, Pagination } from "antd";
 import ModifyUserModal from "../components/CustomModal/ModifyUserModal";
-import { HashAvatar } from "../utils/HashAvatar";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { getOrderUser } from "../http/_api/order";
+import { HashAvatar } from "@/utils/HashAvatar";
+import i18n from 'i18next';
+import { useTranslation } from "react-i18next";
+import { getOrderUser } from "@/request/_api/order";
 import { useUpdateEffect } from "ahooks";
-import { useTranslation } from "next-i18next";
-import { deform_Skills } from "../utils/Deform";
-import { getSillTreeMap } from "../http/_api/task";
-import { ConvertToken, ConvertTokenAddress } from "../utils/Currency";
-import Link from "next/link";
+import { deform_Skills } from "@/utils/Deform";
+import { getSillTreeMap } from "@/request/_api/task";
+import { ConvertToken, ConvertTokenAddress } from "@/utils/Currency";
 import TaskDetail from "../components/CustomItem/TaskDetail";
-import { useRouter } from "next/router";
+import { Sysmbol } from "@/utils/Sysmbol";
+import Link from "next/link";
 
 export default function MyInfo() {
   const { address } = useAccount();
 
   const { t } = useTranslation("task");
-  const contractAddr = {
-    worker: "0xC6f4Add56557B6aA58BdE6850C44a2EEC812Dcb8",
-    issuer: "0x0849ef3ff808f738e427A9e3a18904FDee7Ff2D1"
-  }
   let [selectAddr, setSelectAddr] = useState();
   let [userInfo, setUserInfo] = useState();
   let [isModify, setIsModify] = useState(false);
@@ -218,7 +214,7 @@ export default function MyInfo() {
                   {t("applylist.skill")}:&nbsp;&nbsp;
                   {deform_Skills(userInfo.role, skill).map((e, i) => (
                     <span className="role" key={i}>
-                      {location.pathname.indexOf("/zh") === -1 ? e.en : e.zh}
+                      {i18n.language === 'en' ? e.en : e.zh}
                     </span>
                   ))}
                   {userInfo.role.length === 0 && (
@@ -265,7 +261,7 @@ export default function MyInfo() {
                             <p className="text-ellipsis">{e.task.title}</p>
                             <a 
                               className="goSBT" 
-                              href={`https://testnets.opensea.io/${location.pathname.indexOf('/zh') === -1 ? '':'zh-CN/'}assets/mumbai/${address === e.issuer ? contractAddr.issuer: contractAddr.worker}/${e.order_id}`} 
+                              href={`https://testnets.opensea.io/${location.pathname.indexOf('/zh') === -1 ? '':'zh-CN/'}assets/mumbai/${address === e.issuer ? Sysmbol().Issuer: Sysmbol().Builder}/${e.order_id}`} 
                               target="_blank"
                             >
                               <div>
@@ -279,7 +275,7 @@ export default function MyInfo() {
                                 {t("task.skill")}: &nbsp;
                                 {deform_Skills(e.task.role, skill).map((e) => (
                                   <span key={e.index}>
-                                    {location.pathname.indexOf("/zh") === -1
+                                    {i18n.language === 'en'
                                       ? e.en
                                       : e.zh}
                                   </span>
@@ -352,12 +348,4 @@ export default function MyInfo() {
       </div>
     </div>
   );
-}
-
-export async function getStaticProps({ locale }) {
-  return {
-    props: {
-      ...(await serverSideTranslations(locale)),
-    },
-  };
 }

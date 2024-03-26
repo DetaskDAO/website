@@ -1,23 +1,24 @@
 import { useEffect, useState } from "react"
 import qs from 'querystring';
-import { getApply, getSillTreeMap, updatedApplySort } from "../http/_api/task";
-import { searchTaskDetail } from "../http/_api/public";
-import { deform_Count, deform_Skills } from "../utils/Deform";
-import { getDate } from "../utils/GetDate";
+import { getApply, getSillTreeMap, updatedApplySort } from "@/request/_api/task";
+import { searchTaskDetail } from "@/request/_api/public";
+import { deform_Count, deform_Skills } from "@/utils/Deform";
+import { getDate } from "@/utils/GetDate";
 import Computing_time from "../components/Computing_time";
-import { useAccount, useContractWrite, useWaitForTransaction } from "wagmi";
+import { useAccount, useContract, useContractWrite, useProvider, useWaitForTransaction } from "wagmi";
 import { message, Spin } from "antd";
 import InviteModal from "../components/CustomModal/InviteModal";
-import { ConfigOrder, useContracts, useRead } from "../controller";
+
+import { ConfigOrder, useContracts } from "../src/controller";
 import { ethers } from "ethers";
-import { createOrder } from "../http/_api/order";
+import { createOrder } from "@/request/_api/order";
 import { useRouter } from "next/router";
-import { Currency, taskCurrency } from "../utils/Currency";
-import { HashAvatar } from "../utils/HashAvatar";
+import { Currency, taskCurrency } from "@/utils/Currency";
+import { HashAvatar } from "@/utils/HashAvatar";
 import UserSocialMedia from "../components/CustomItem/UserSocialMedia";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { useTranslation } from "next-i18next";
-import CustomStep from "../components/CustomStep";
+import i18n from 'i18next';
+import { useTranslation } from "react-i18next";
+import CustomStep from "@/components/CustomStep";
 
 export default function ApplyList(params) {
 
@@ -57,7 +58,14 @@ export default function ApplyList(params) {
 
     // approve ==> allowance
     // dUSDT
-    const { usedUSDTRead: dUSDTallowance } = useRead('allowance', [address, process.env.NEXT_PUBLIC_PERMIT2])
+    const provider = useProvider();
+    const abi = require(`@/deployments/abi/dUSDT.json`);
+    const contract = useContract({
+        addressOrName: process.env.NEXT_PUBLIC_CONTRACT_USDC,
+        contractInterface: abi.abi,
+        signerOrProvider: provider,
+    
+  })
     const { usedUSDTContractWrite: dUSDTapprove } = useContracts('approve');
 
 
@@ -86,18 +94,19 @@ export default function ApplyList(params) {
     const tokenIsApprove = async(approve) => {
         await approve.writeAsync({
             recklesslySetUnpreparedArgs: [
-                process.env.NEXT_PUBLIC_PERMIT2, (Math.pow(2,32)-1).toString()
+                process.env.NEXT_PUBLIC_CONTRACT_PERMIT2, (Math.pow(2,32)-1).toString()
             ]
         })
     }
 
     const invitation = async(amount,token) => {
+        let allowance = await contract.allowance(address, process.env.NEXT_PUBLIC_CONTRACT_PERMIT2);
         // 判断是否为ERC20
         if (token != ethers.constants.AddressZero) {
             // 判断当前币种是否approve ==> 发起approve
             switch (token) {
-                case process.env.NEXT_PUBLIC_USD:
-                    if (dUSDTallowance.data.toString() == 0) {
+                case process.env.NEXT_PUBLIC_CONTRACT_USDC:
+                    if (allowance.toString() == 0) {
                         await tokenIsApprove(dUSDTapprove)
                     }
                     break;
@@ -157,7 +166,7 @@ export default function ApplyList(params) {
             if (res.code === 0 && res.data.list) {
                 
                 detail = res.data.list[0];
-                detail.currency = detail.currency === 'USD' ? 'USDT' : detail.currency;
+                detail.currency = detail.currency === 'USD' ? 'USDC' : detail.currency;
                 detail.budget = deform_Count(detail.budget,detail.currency);
                 setDetail(detail);
 
@@ -202,7 +211,7 @@ export default function ApplyList(params) {
                                     deform_Skills(detail.role, skill).map(e => 
                                         <span key={e.index}>
                                             {
-                                                location.pathname.indexOf("/zh") === -1 ? e.en : e.zh
+                                                i18n.language === 'en' ? e.en : e.zh
                                             }
                                         </span>
                                     )
@@ -232,7 +241,7 @@ export default function ApplyList(params) {
                     </div>
             }
 
-            <CustomStep 
+            <CustomStep
                 current={1}
                 status="process"
                 size="small"
@@ -271,7 +280,7 @@ export default function ApplyList(params) {
                                                     deform_Skills(e.user.role, skill).map(e => 
                                                         <span key={e.index}>
                                                             {
-                                                                location.pathname.indexOf("/zh") === -1 ? e.en : e.zh
+                                                                i18n.language === 'en' ? e.en : e.zh
                                                             }
                                                         </span>
                                                     )
@@ -327,10 +336,3 @@ export default function ApplyList(params) {
     )
 }
 
-export async function getStaticProps({ locale }) {
-    return {
-      props: {
-        ...(await serverSideTranslations(locale)),
-      },
-    };
-  }

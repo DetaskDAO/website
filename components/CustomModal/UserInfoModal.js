@@ -3,8 +3,8 @@ import { Modal } from "antd"
 import Identicon from "identicon.js";
 import Image from "next/image"
 import { useEffect } from "react";
-import { deform_Skills } from "../../utils/Deform"
-import { HashAvatar } from "../../utils/HashAvatar";
+import { deform_Skills } from "@/utils/Deform"
+import { HashAvatar } from "@/utils/HashAvatar";
 
 
 

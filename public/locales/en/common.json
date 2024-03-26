@@ -7,8 +7,18 @@
       "About title": "About title",
       "About description": "About description"
     },
+    "OO": "xxxx",
     "header": {
-      "Home": "Home",
-      "About": "About"
+      "home": "Homexxx",
+      "task": "Explore",
+      "wallet": "Connect Wallet",
+      "disconnect": "Disconnect",
+      "message": "Notification",
+      "view": "See All",
+      "allmessage": "All Notification",
+      "user1": "Profile",
+      "user2": "Posted Tasks",
+      "user3": "Applied Tasks",
+      "user4": "My SBT"
     }
   }

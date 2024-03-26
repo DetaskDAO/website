@@ -1,6 +1,7 @@
 import { message, Popover } from "antd";
 import { useEffect, useState } from "react";
-import { deform_Skills } from "../../utils/Deform";
+import { deform_Skills } from "@/utils/Deform";
+import i18n from 'i18next';
 
 
 export default function SkillsCard(params) {
@@ -16,7 +17,7 @@ export default function SkillsCard(params) {
     };
 
     const outPrint = (e) => {
-        return location.pathname.indexOf("/zh") === -1 ? 
+        return i18n.language === 'en' ? 
         e.en
         :
         e.zh

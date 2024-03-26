@@ -3,16 +3,16 @@ import { Button, Checkbox, Divider, InputNumber, message, Modal, Radio, Spin, Ta
 import { ethers } from "ethers";
 import { useEffect, useState } from "react";
 import { useAccount, useContractWrite, useNetwork, useWaitForTransaction } from "wagmi";
-import { ConfigOrder, multicallWrite, muticallEncode, useContracts, useRead, useSignAppendData, useSignPermit2Data } from "../../controller";
-import { startOrder, updatedStage } from "../../http/_api/order";
+import { ConfigOrder, multicallWrite, muticallEncode, useContracts, useRead, useSignAppendData, useSignPermit2Data } from "../../src/controller";
+import { startOrder, updatedStage } from "@/request/_api/order";
 import OutputStageCard from "../CustomCard/OutputStageCard";
 import AppendStage from "./AppendStage";
 import { BigNumber } from '@ethersproject/bignumber'
-import { Sysmbol } from "../../utils/Sysmbol";
-import { ConvertToken, ConvertTokenAddress, Currency } from "../../utils/Currency";
-import { useTranslation } from "next-i18next";
+import { Sysmbol } from "@/utils/Sysmbol";
+import { ConvertToken, ConvertTokenAddress, Currency } from "@/utils/Currency";
+import { useTranslation } from "react-i18next";
 import { useRouter } from "next/router";
-import { getDate } from "../../utils/GetDate";
+import { getDate } from "@/utils/GetDate";
 
 
 export default function OrderStageList(params) {
@@ -181,8 +181,7 @@ export default function OrderStageList(params) {
         setIsLoading(true);
 
         let now = parseInt(new Date().getTime()/1000);
-        // TODO:Deadline
-        let setTime = 5 * 60;
+        let setTime = 24 * 60 * 60;
         deadline = now+setTime;
         setDeadline(deadline);
         appendParams = {
@@ -203,8 +202,7 @@ export default function OrderStageList(params) {
         setIsLoading(true);
 
         let now = parseInt(new Date().getTime()/1000);
-        // TODO:Deadline
-        let setTime = 5 * 60;
+        let setTime = 24 * 60 * 60;
         deadline = now+setTime;
         setDeadline(deadline);
         appendParams = {
@@ -296,11 +294,10 @@ export default function OrderStageList(params) {
     }
 
     const permit2Get = () => {
-        // 签名 ==> TODO: ==>
         let data = dataStages[dataStages.length-1];
         let amount = Currency(order.currency, data.amount);
         let now = parseInt(new Date().getTime()/1000);
-        let setTime = 60 * 60;
+        let setTime = 24 * 60 * 60;
         permitDeadline = now+setTime;
         setPermitDeadline(permitDeadline);
         permit2 = {

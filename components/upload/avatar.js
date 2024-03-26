@@ -1,4 +1,4 @@
-import { uploadImage } from "../../http/_api/public";
+import { uploadImage } from "@/request/_api/public";
 
 export const uploadImageProps = {
     multiple: false,

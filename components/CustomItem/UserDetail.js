@@ -1,8 +1,8 @@
-import { useTranslation } from "next-i18next";
+import { useTranslation } from "react-i18next";
 import { useEffect, useState } from "react";
-import { getUserInfo } from "../../http/_api/public";
-import { deform_Skills } from "../../utils/Deform";
-import { HashAvatar } from "../../utils/HashAvatar";
+import { getUserInfo } from "@/request/_api/public";
+import { deform_Skills } from "@/utils/Deform";
+import { HashAvatar } from "@/utils/HashAvatar";
 import UserSocialMedia from "./UserSocialMedia";
 
 

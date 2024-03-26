@@ -1,9 +1,9 @@
 import { message, Spin } from "antd";
-import { useTranslation } from "next-i18next";
+import { useTranslation } from "react-i18next";
 import { useEffect, useState } from "react";
 import { useAccount, useContractWrite, useNetwork, useWaitForTransaction } from "wagmi";
-import { ConfigOrder, useContracts, useRead, useSignProData } from "../../controller";
-import { startOrder, updatedStage } from "../../http/_api/order";
+import { ConfigOrder, useContracts, useRead, useSignProData } from "../../src/controller";
+import { startOrder, updatedStage } from "@/request/_api/order";
 import StageOutput from "../CustomItem/StageOutput";
 import DeliveryModal from "../CustomModal/DeliveryModal";
 import ProlongModal from "../CustomModal/ProlongModal";
@@ -255,8 +255,7 @@ export default function OutputStageCard(params) {
         setIsLoading(true);
 
         let now = parseInt(new Date().getTime()/1000);
-        // TODO:Deadline
-        let setTime = 5 * 60;
+        let setTime = 24 * 60 * 60;
         deadline = now+setTime;
         setDeadline(deadline);
         prolongObj = {

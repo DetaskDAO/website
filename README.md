@@ -1,34 +1,73 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# DeTask
+<p align="center">
+  <img src="./public/logo1.png" width="400" alt="DeTask logo">
+</p>
 
-## Getting Started
+## 🚀 DeTask frontend
 
-First, run the development server:
+### 技术栈
 
-```bash
-npm run dev
-# or
-yarn dev
+`next@12.3.1 + wagmi@0.6.4 + redux@4.2.0 + ethers@5.7 + Antd@5.8.2`
+
+> `ahooks`    React Hooks 库
+
+> `identicon.js`    哈希头像生成
+
+### 基本功能
+
+- [x] 派发任务
+- [x] 接收任务
+- [x] 任务管理
+
+### 项目结构
+
+```
+├── components               # 组件
+├── containers               # 容器
+├── public                   # 资源文件
+├── page                     # UI 页面
+├── utils                    # 工具
+├── styles                   # 样式
+├── src                      # 主程序目录
+│   ├── controller              # 合约调用
+│   ├── depolyments             # 合约地址
+│   ├── redux                   # redux配置
+│   └── request                 # 请求接口
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 配置参数
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+将以下配置添加到`./env.development`文件中，将'xxx'替换为设定值。
+```bash
+NEXT_PUBLIC_DEVELOPMENT_CHAIN="mumbai"
+NEXT_PUBLIC_DEVELOPMENT_CHAIN_ID="80001"
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+NEXT_PUBLIC_CONTRACT_DETASK=xxx           # DETASK 合约地址
+NEXT_PUBLIC_CONTRACT_DEORDER=xxx          # DEORDER 合约地址
+NEXT_PUBLIC_CONTRACT_PERMIT2=xxx          # PERMIT2 合约地址
+NEXT_PUBLIC_CONTRACT_USDC=xxx             # USDC 合约地址
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+NEXT_PUBLIC_INFURA_KEY=xxx              # INFURA KEY
 
-## Learn More
+NEXT_PUBLIC_DEVELOPMENT_API=xxx         # API 地址
+NEXT_PUBLIC_DEVELOPMENT_UPLOAD=xxx      # UPLOAD 文件目录
+NEXT_PUBLIC_DEVELOPMENT_FILE=xxx        # IPFS 节点
 
-To learn more about Next.js, take a look at the following resources:
+NEXT_PUBLIC_SOCIAL_GITHUB_INVITE_URL="https://github.com/DetaskDAO"         # gitub
+NEXT_PUBLIC_SOCIAL_TWITTER_INVITE_URL="https://twitter.com/Detasks"         # twitter
+NEXT_PUBLIC_SOCIAL_DISCORD_INVITE_URL="https://discord.gg/nWWQgsSZjy"       # discord
+NEXT_PUBLIC_SOCIAL_TELEGRAM_INVITE_URL="https://t.me/detaskxyz"             # telegram
+NEXT_PUBLIC_SOCIAL_MEDIUM_INVITE_URL="https://medium.com/@web3.detask"      # medium
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 使用方法
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```npm
 
-## Deploy on Vercel
+// 安装依赖
+npm i
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+// 启动
+npm dev
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```

@@ -1,7 +1,7 @@
 import { Button, Input, InputNumber, message } from "antd";
-import { useTranslation } from "next-i18next";
+import { useTranslation } from "react-i18next";
 import { useEffect, useState } from "react";
-import { ConvertTokenAddress } from "../../utils/Currency";
+import { ConvertTokenAddress } from "@/utils/Currency";
 const { TextArea } = Input;
 
 
@@ -82,8 +82,7 @@ export default function StageInner(params) {
         <div className="inner">
             <p className="inner-title">{t("order.delivery-length")}</p>
             <div className="flex">
-                {/* TODO: period min set */}
-                <InputNumber stringMode min={0.0007} precision={4} className="period" defaultValue={inner[index]?.period} onChange={(e) => onChange('period', e)} /> 
+                <InputNumber stringMode min={1} precision={0} className="period" defaultValue={inner[index]?.period} onChange={(e) => onChange('period', e)} /> 
                 <p>{t("task.day")}</p>
             </div>
         </div>

@@ -1,20 +1,20 @@
 {
     "title": "Post the task and describe the task requirements",
     "subtitle": "A detailed requirement description allows developers to understand your needs and increases the intent to register.",
-    "detail-title": "Task details",
+    "detail-title": "Task Details",
     "all": "ALL",
     "mao": ":",
     "issuer": "Hirer",
     "worker": "Developer",
     "gosbt": "View SBT",
     "task": {
-        "name": "Task title",
-        "desc": "Task description",
+        "name": "Task Title",
+        "desc": "Task Description",
         "file": "Files",
         "upload": "Please upload a detailed requirements document, prototype or related task description. (Maximum file size: 20 MB).",
-        "skill": "Required skills",
-        "amount": "Task budget",
-        "period": "Task duration",
+        "skill": "Required Skills",
+        "amount": "Task Budget",
+        "period": "Task Duration",
         "quotation": "Quoted by developer",
         "tips-skill": "Please select required skills",
         "day": "days",
@@ -33,31 +33,31 @@
             "period": "Please select the estimated time"
         }
     },
-    "btn": "Post a task",
+    "btn": "Post a Task",
     "btnmodify": "Modify task",
-    "btn-view": "View task",
+    "btn-view": "View Task",
     "btn-apply": "Apply",
     "btn-cancel": "Cancel",
     "btn-modify": "Edit",
     "btn-update": "Update",
-    "btn-stage": "Phase division",
-    "tip-stage": "The hirer invites you to submit a \"Phase division\".",
+    "btn-stage": "Phase Division",
+    "tip-stage": "The hirer invites you to submit a \"Phase Division\".",
     "modal": {
         "title": "Preview",
         "btn": "Post"
     },
     "modal-apply": {
         "title": "Application",
-        "subtitle": "Application information",
-        "amount": "Your offer",
+        "subtitle": "Application Information",
+        "amount": "Your Offer",
         "period": "Estimated development time",
-        "social": "Social account",
+        "social": "Social Account",
         "social-tip": "Input your usual social accounts to make it easier for the hirer to contact you.",
         "social-subtitle": "The Hirer can contact you via social accounts",
         "tj": "Self-recomandation"
     },
 
-    "filter": "Filter by",
+    "filter": "Filter By",
     "search": "Search tasks",
 
     "header": {
@@ -75,13 +75,13 @@
     },
 
     "userproject": {
-        "posted": "Posted tasks",
-        "apply": "Applied tasks",
-        "ongoing": "Ongoing tasks",
-        "closed": "Closed tasks",
-        "btn-close": "Close the task",
-        "btn-open": "Open the task",
-        "btn-edit": "Edit task",
+        "posted": "Posted Tasks",
+        "apply": "Applied Tasks",
+        "ongoing": "Ongoing Tasks",
+        "closed": "Closed Tasks",
+        "btn-close": "Close the Task",
+        "btn-open": "Open the Task",
+        "btn-edit": "Edit Task",
         "btn-withdraw": ""
     },
 
@@ -107,9 +107,9 @@
     },
 
     "order": {
-        "title": "Phase division",
+        "title": "Phase Division",
         "model": {
-            "title": "Payment model",
+            "title": "Payment Model",
             "model1": "Payment by time",
             "model2": "Payment by acceptance"
         },
@@ -119,10 +119,10 @@
         "fee": "Fee",
         "total": "Total cost",
         "btn-agree": "Agree",
-        "btn-cancel": "Decline collaboration",
+        "btn-cancel": "Decline Collaboration",
         "btn-submit": "Submit",
         "btn-resubmit": "Resubmit",
-        "btn-add": "Add phase",
+        "btn-add": "Add Phase",
         "btn-change": "Submit change",
         "btn-withdraw": "Withdrawal",
         "btn-withdrawal": "Withdrawn",
@@ -205,24 +205,24 @@
 
     "user": {
         "none": "no bio",
-        "edit": "Edit profile",
-        "title": "Task record",
-        "subtitle1": "Completed tasks",
-        "subtitle2": "Posted tasks",
+        "edit": "Edit Profile",
+        "title": "Task Record",
+        "subtitle1": "Completed Tasks",
+        "subtitle2": "Posted Tasks",
         "nodata": "No task",
-        "btn1": "Post a task",
-        "btn2": "Explore task",
+        "btn1": "Post a Task",
+        "btn2": "Explore Tasks",
         "modal": {
-            "title": "Edit profile",
-            "save": "Save profile",
+            "title": "Edit Profile",
+            "save": "Save",
             "avatar1": "It is recommended to upload images in jpeg/png/gif format",
             "avatar2": "Maximum file size: 4MB.",
             "upload": "Upload",
-            "name": "User name",
+            "name": "Name",
             "name-t": "Input username",
             "bio": "Bio",
             "bio-t": "Add a bio",
-            "social": "Social account",
+            "social": "Social Account",
             "social-t": "At least one",
             "social-i": "Input your {{name}} account"
         }

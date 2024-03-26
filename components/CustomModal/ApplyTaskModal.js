@@ -2,8 +2,8 @@ import { Input, Select, Button, Checkbox, Col, Row, InputNumber, Modal } from "a
 import { useEffect, useState } from "react";
 import Computing_time from "../Computing_time";
 import Image from "next/image"
-import { useTranslation } from "next-i18next";
-import { taskCurrency } from "../../utils/Currency";
+import { useTranslation } from "react-i18next";
+import { taskCurrency } from "@/utils/Currency";
 
 const {TextArea} = Input
 const { Option } = Select;

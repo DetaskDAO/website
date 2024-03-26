@@ -1,6 +1,4 @@
-import { useState, useEffect } from "react";
-import { ClockCircleOutlined } from '@ant-design/icons'
-import { useTranslation } from "next-i18next";
+import { useTranslation } from "react-i18next";
 
 export default function Computing_time (params) {
     const { create_time } = params

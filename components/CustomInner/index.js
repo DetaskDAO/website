@@ -1,6 +1,7 @@
 import { Input, Select, InputNumber, Form, Checkbox } from 'antd';
 import { ethers } from 'ethers';
-import { useTranslation } from 'next-i18next';
+import { useTranslation } from "react-i18next";
+
 import { useState } from 'react';
 const { Option } = Select;
 const { TextArea } = Input;
@@ -17,7 +18,7 @@ function CustomInner(props) {
         <Form.Item name="currency" noStyle>
             <Select>
               <Option value={4}>MATIC</Option>
-              <Option value={1}>USDT</Option>
+              <Option value={1}>USDC</Option>
             </Select>
         </Form.Item>
     );

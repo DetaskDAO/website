@@ -1,7 +1,7 @@
 import { Button, Input, InputNumber, message } from "antd";
-import { useTranslation } from "next-i18next";
+import { useTranslation } from "react-i18next";
 import { useEffect, useState } from "react";
-import { ConvertToken, ConvertTokenAddress, CurrencyMin } from "../../utils/Currency";
+import { ConvertToken, ConvertTokenAddress, CurrencyMin } from "@/utils/Currency";
 const { TextArea } = Input;
 
 

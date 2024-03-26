@@ -1,23 +1,18 @@
 import { useEffect, useState } from "react";
-import { Button, Modal, Steps } from "antd";
+import { Modal } from "antd";
 import { useAccount } from 'wagmi'
-const { Step } = Steps;
-import { deform_Skills } from '../utils/Deform';
 import qs from 'querystring';
-import { getOrderDetail, getOrderMsg, readOrderMsg } from "../http/_api/order";
+import { getOrderDetail, getOrderMsg, readOrderMsg } from "@/request/_api/order";
 import TaskDetail from "../components/CustomItem/TaskDetail";
-import TaskNav from "../components/nav/TaskNav";
 import UserDetail from "../components/CustomItem/UserDetail";
 import OrderSetStage from "../components/CustomItem/OrderSetStage";
 import OrderStageList from "../components/CustomItem/OrderStageList";
-import { useContracts, useRead } from "../controller";
-import { Sysmbol } from "../utils/Sysmbol";
-import BigNumber from "bignumber.js";
-import { BigNumberRandom, NonceBitmap, Permit2Nonce } from "../utils/Permit2Nonce";
-import { ConvertToken, ConvertTokenAddress, Currency } from "../utils/Currency";
-import CustomStep from "../components/CustomStep";
-import { useTranslation } from "next-i18next";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { useRead } from "../src/controller";
+import { BigNumberRandom, NonceBitmap, Permit2Nonce } from "@/utils/Permit2Nonce";
+import { ConvertToken, ConvertTokenAddress } from "@/utils/Currency";
+import { useTranslation } from "react-i18next";
+import OrderNav from "@/components/Order/OrderNav";
+import CustomStep from "@/components/CustomStep";
 
 export default function Order(props) {
     
@@ -189,12 +184,12 @@ export default function Order(props) {
     },[order?.order_id])
 
     return <div className="WorkerProject">
-                <TaskNav task={task} />
+                <OrderNav task={task} />
                 {
                     order &&
                     <>
                         <div className="worker-steps">
-                            <CustomStep 
+                            <CustomStep
                                 current={order.progress === 2 ? 3+progress : 2+progress}
                                 status="process"
                                 size="small"
@@ -205,8 +200,6 @@ export default function Order(props) {
                         </div>      
                         {/* 对方详情 */}
                         <UserDetail address={search.who === 'issuer' ? order.worker : order.issuer} who={search.who} />
-                        {/* 事务状态 */}
-                        {/* <OrderProgressNav /> */}
                         {/* 根据阶段打印 */}
                         {statusTips()}
                         {switchStages()}
@@ -218,12 +211,4 @@ export default function Order(props) {
                     <TaskDetail task={task} />
                 }
     </div>
-}
-
-export async function getStaticProps({ locale }) {
-    return {
-      props: {
-        ...(await serverSideTranslations(locale)),
-      },
-    };
 }

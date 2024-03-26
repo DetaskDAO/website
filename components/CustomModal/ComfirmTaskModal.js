@@ -1,9 +1,11 @@
 import { Button } from 'antd';
 import { CloseOutlined,FilePdfOutlined } from "@ant-design/icons"
 import { useState,useEffect } from 'react';
-import { useTranslation } from 'next-i18next';
-import { taskCurrencyName } from '../../utils/Currency';
-import { download } from '../../utils/download';
+import { useTranslation } from "react-i18next";
+
+import { taskCurrencyName } from '@/utils/Currency';
+import { download } from '@/utils/download';
+import i18n from 'i18next';
 
 export default function ComfirmTaskModal(params) {
     
@@ -15,7 +17,7 @@ export default function ComfirmTaskModal(params) {
     useEffect(()=>{
         let nedSkills = []
         skills.list.map(ele=>{
-            nedSkills.push(location.pathname.indexOf("/zh") === -1 ? ele.en : ele.zh)
+            nedSkills.push(i18n.language === 'en' ? ele.en : ele.zh)
         })
         needSkills = nedSkills
         setNeedSkills([...needSkills])

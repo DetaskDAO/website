@@ -1,20 +1,19 @@
 import Image from "next/image";
 import { useEffect, useState } from "react"
 import { useAccount } from "wagmi"
-import { msgList, readMsg } from "../http/_api/user";
-import { getDate } from "../utils/GetDate";
-import Identicon from "identicon.js";
-import { message, Pagination } from "antd";
-import { getJwt } from "../utils/GetJwt";
-import { HashAvatar } from "../utils/HashAvatar";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { useTranslation } from "next-i18next";
+import { msgList, readMsg } from "@/request/_api/user";
+import { getDate } from "@/utils/GetDate";
+import { Pagination } from "antd";
+import { HashAvatar } from "@/utils/HashAvatar";
+import { useTranslation } from "react-i18next";
+import { constans } from "@/utils/constans";
 
 export default function MessageCenter(params) {
     
 
     const { t } = useTranslation("task");
     const { address } = useAccount();
+    const { getToken } = constans();
 
     let [messageList, setMessageList] = useState([]);
     let [pageConfig, setPageConfig] = useState({
@@ -53,15 +52,8 @@ export default function MessageCenter(params) {
     }
 
     const init = () => {
-        const token = localStorage.getItem(`session.${address?.toLowerCase()}`);
-        if (!token) {
+        if (!getToken()) {
             return
-        }else{
-            // 判断token有效期
-            const status = getJwt(token);
-            if (!status) {
-                return
-            }
         }
         msgList(pageConfig)
        .then(res => {
@@ -107,13 +99,4 @@ export default function MessageCenter(params) {
             </div>
         </div>
     </div>
-}
-
-
-export async function getStaticProps({ locale }) {
-    return {
-      props: {
-        ...(await serverSideTranslations(locale)),
-      },
-    };
 }

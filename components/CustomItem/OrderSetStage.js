@@ -3,16 +3,16 @@ import { useSetState } from "ahooks";
 import { Button, Checkbox, InputNumber, message, Modal, Radio, Spin } from "antd";
 import BigNumber from "bignumber.js";
 import { ethers, logger } from "ethers";
-import { useTranslation } from "next-i18next";
+import { useTranslation } from "react-i18next";
 import Image from "next/image";
 import { useEffect, useState } from "react"
 import { useAccount, useNetwork, useWaitForTransaction } from "wagmi";
-import { multicallWrite, muticallEncode, useRead, useSignData, useSignPermit2Data } from "../../controller";
-import { deleteOrder, getOrderMsg, updatedStage } from "../../http/_api/order";
-import { ConvertTokenAddress, Currency } from "../../utils/Currency";
-import { floatAdd } from "../../utils/Float";
-import { getDate } from "../../utils/GetDate";
-import { Sysmbol } from "../../utils/Sysmbol";
+import { multicallWrite, muticallEncode, useRead, useSignData, useSignPermit2Data } from "../../src/controller";
+import { deleteOrder, getOrderMsg, updatedStage } from "@/request/_api/order";
+import { ConvertTokenAddress, Currency } from "@/utils/Currency";
+import { floatAdd } from "@/utils/Float";
+import { getDate } from "@/utils/GetDate";
+import { Sysmbol } from "@/utils/Sysmbol";
 import InnerStageCard from "../CustomCard/InnerStageCard";
 
 export default function OrderSetStage(params) {
@@ -131,8 +131,7 @@ export default function OrderSetStage(params) {
     //  设置阶段 ==> 处理签名信息
     const sendSignature = () => {
         let now = parseInt(new Date().getTime()/1000);
-        // TODO:Deadline
-        let setTime = 5 * 60;
+        let setTime = 24 * 60 * 60;
         stages.deadline = now+setTime;
         setStages({...stages});
 
@@ -153,13 +152,14 @@ export default function OrderSetStage(params) {
             _amount.push(amount);
             _period.push(`${parseInt(e.period * 24 * 60 * 60)}`)
         })
+        console.log('nonce ==>',nonces);
         signObj = {
             amounts: _amount,
             periods: _period,
             chainId: chain.id,
             address: address,
             oid: search.order_id,
-            payType: payType,     //  TODO ==> 临时变量
+            payType: payType,
             nonce: Number(nonces.data.toString()),
             deadline: stages.deadline
         }
@@ -462,13 +462,12 @@ export default function OrderSetStage(params) {
             setStatus('WorkerAgreeStage')
         }
         if (address != order.worker && order.currency != ethers.constants.AddressZero) {
-            // 签名 ==> TODO: ==>
             let sum = 0;
             dataStages.map(e => {
                 sum = floatAdd(sum, e.amount)
             })
             let now = parseInt(new Date().getTime()/1000);
-            let setTime = 60 * 60;
+            let setTime = 24 * 60 * 60;
             permitDeadline = now+setTime;
             setPermitDeadline(permitDeadline);
             permit2 = {
@@ -542,7 +541,7 @@ export default function OrderSetStage(params) {
                     </div> 
                 }
             </div>
-            <InnerStageCard defaultAmount={amount} currency={order.currency} getInner={getInner} dataStages={dataStages} edit="block" setIsChange={setIsChange} order={order} />
+            <InnerStageCard defaultAmount={amount} currency={order.currency} token={order.currency} getInner={getInner} dataStages={dataStages} edit="block" setIsChange={setIsChange} order={order} />
             <div className="total">
                 {
                     ((dataStages && dataStages[0].period === 0) && stage.orderModel) && 

@@ -1,8 +1,8 @@
 import { Button, InputNumber, message, Modal, Select } from "antd";
-import { useTranslation } from "next-i18next";
+import { useTranslation } from "react-i18next";
 import Image from "next/image";
 import { useState } from "react";
-import { CurrencyMin } from "../../utils/Currency";
+import { CurrencyMin } from "@/utils/Currency";
 export default function ProlongModal(params) {
     
     const { close, prolong, loading, currency, who, issuer } = params;

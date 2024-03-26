@@ -2,15 +2,15 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import { Button } from 'antd';
-import Link from 'next/link';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { useTranslation } from 'next-i18next';
 import { useEffect, useState } from 'react';
-import { statistics } from '../http/_api/public';
-import { HashAvatar } from '../utils/HashAvatar';
+import { statistics } from '@/request/_api/public';
+import { HashAvatar } from '@/utils/HashAvatar';
+import { useTranslation } from "react-i18next";
+import Link from 'next/link';
 
 export default function Home() {
-  const { t } = useTranslation("index");
+  const { t } = useTranslation();
+  
   let [tj, setTj] = useState({});
 
   useEffect(() => {
@@ -39,10 +39,10 @@ export default function Home() {
               <p className="title bg">{t("title")}</p>
               <p className="title mt0" dangerouslySetInnerHTML={{__html: t("title2")}}></p>
               <div className="info">
-                <Link href={{pathname:'/publish'}}>
+                <Link href="/publish">
                   <Button className="btn">{t("btn1")}</Button>
                 </Link>
-                <Link href={{pathname:'/projects'}}>
+                <Link href="/projects">
                   <Button className="btn">{t("btn2")}</Button>
                 </Link>
               </div>
@@ -96,7 +96,6 @@ export default function Home() {
                   <Image src="/img/img-index-title.png" alt="" layout="fill" objectFit="cover" />
               </div>
               <p className="font-Title">{t("ucan.title")}</p>
-              <div className="point"/>
             </div>
             <div className="ucan-list">
               <div className="list-li">
@@ -133,116 +132,11 @@ export default function Home() {
             </div>
           </div>
 
-          {/* <div className="example">
-            <div className="Index-title">
-              <div className="img"></div>
-              <p className="font-Title">Reference case</p>
-              <div className="point"/>
-            </div>
-            <div className="example-list">
-              <div className="list-li">
-                <div className="img"></div>
-                <div className="info">
-                  <p className="title">Entry name <span>label</span><span>label</span></p>
-                  <p className="content">Project description Project description Project</p>
-                  <div className="more">
-                    <p className="time">3 days ago</p>
-                    <Button className="btn">Learn more</Button>
-                  </div>
-                </div>
-              </div>
-              <div className="list-li">
-                <div className="img"></div>
-                <div className="info">
-                  <p className="title">Entry name <span>label</span><span>label</span></p>
-                  <p className="content">Project description Project description Project</p>
-                  <div className="more">
-                    <p className="time">3 days ago</p>
-                    <Button className="btn">Learn more</Button>
-                  </div>
-                </div>
-              </div>
-              <div className="list-li">
-                <div className="img"></div>
-                <div className="info">
-                  <p className="title">Entry name <span>label</span><span>label</span></p>
-                  <p className="content">Project description Project description Project</p>
-                  <div className="more">
-                    <p className="time">3 days ago</p>
-                    <Button className="btn">Learn more</Button>
-                  </div>
-                </div>
-              </div>
-              <div className="list-li">
-                <div className="img"></div>
-                <div className="info">
-                  <p className="title">Entry name <span>label</span><span>label</span></p>
-                  <p className="content">Project description Project description Project</p>
-                  <div className="more">
-                    <p className="time">3 days ago</p>
-                    <Button className="btn">Learn more</Button>
-                  </div>
-                </div>
-              </div>
-              <div className="list-li">
-                <div className="img"></div>
-                <div className="info">
-                  <p className="title">Entry name <span>label</span><span>label</span></p>
-                  <p className="content">Project description Project description Project</p>
-                  <div className="more">
-                    <p className="time">3 days ago</p>
-                    <Button className="btn">Learn more</Button>
-                  </div>
-                </div>
-              </div>
-              <div className="list-li">
-                <div className="img"></div>
-                <div className="info">
-                  <p className="title">Entry name <span>label</span><span>label</span></p>
-                  <p className="content">Project description Project description Project</p>
-                  <div className="more">
-                    <p className="time">3 days ago</p>
-                    <Button className="btn">Learn more</Button>
-                  </div>
-                </div>
-              </div>
-              <div className="list-li">
-                <div className="img"></div>
-                <div className="info">
-                  <p className="title">Entry name <span>label</span><span>label</span></p>
-                  <p className="content">Project description Project description Project</p>
-                  <div className="more">
-                    <p className="time">3 days ago</p>
-                    <Button className="btn">Learn more</Button>
-                  </div>
-                </div>
-              </div>
-              <div className="list-li">
-                <div className="img"></div>
-                <div className="info">
-                  <p className="title">Entry name <span>label</span><span>label</span></p>
-                  <p className="content">Project description Project description Project</p>
-                  <div className="more">
-                    <p className="time">3 days ago</p>
-                    <Button className="btn">Learn more</Button>
-                  </div>
-                </div>
-              </div>
-              
-            </div>
-          </div> */}
-
           <div className="evaluation">
             <div className="Index-title">
               <div className="img"></div>
               <p className="font-Title">{t("comment.title")}</p>
-              <div className="point"/>
             </div>
-            {/* 
-                0x351b3A08371bbe04AcCa3711C786C16a91E7222B
-                0xFB8f64Dc5489ff9997eda9e7CD851F2cf2f6CA28
-                0xeFf6D5227E07729EAe54D696B677720066d6920d
-            */}
             <div className="evaluation-list">
               <div className="list-li">
                 <div className="li-info">
@@ -293,13 +187,4 @@ export default function Home() {
 
     </div>
   )
-}
-
-
-export async function getStaticProps({ locale }) {
-  return {
-    props: {
-      ...(await serverSideTranslations(locale)),
-    },
-  };
 }

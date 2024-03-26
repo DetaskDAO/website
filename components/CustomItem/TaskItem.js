@@ -1,12 +1,13 @@
 import { Button, Empty, Modal, message, Skeleton } from "antd";
-import { useTranslation } from "next-i18next";
+import i18n from 'i18next';
+import { useTranslation } from "react-i18next";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { useAccount } from "wagmi";
-import { modifyApplySwitch, getSillTreeMap, getApply } from '../../http/_api/task'
-import { ConvertToken, ConvertTokenAddress, taskCurrency } from "../../utils/Currency";
-import { deform_Skills } from "../../utils/Deform";
-import { HashAvatar } from "../../utils/HashAvatar";
+import { modifyApplySwitch, getSillTreeMap, getApply } from '@/request/_api/task'
+import { ConvertToken, ConvertTokenAddress, taskCurrency } from "@/utils/Currency";
+import { deform_Skills } from "@/utils/Deform";
+import { HashAvatar } from "@/utils/HashAvatar";
 import Link from "next/link";
 
 
@@ -104,7 +105,7 @@ export default function     TaskItem(params) {
                                             deform_Skills(e.role, skill).map(e => 
                                                 <span key={e.index}>
                                                     {
-                                                        location.pathname.indexOf("/zh") === -1 ? e.en : e.zh
+                                                        i18n.language === 'en' ? e.en : e.zh
                                                     }
                                                 </span>
                                             )
@@ -127,7 +128,6 @@ export default function     TaskItem(params) {
                                         </p>
                                     </div>
                                 </div>
-                                {/* TODO: 修改Task ==> resolution */}
                                 {/* <Button onClick={() => }>修改</Button> */}
                                 <div className="li-num">
                                     <p>{e.apply_count}</p>
@@ -145,7 +145,7 @@ export default function     TaskItem(params) {
                         </div>
                     </div>
                 )
-            case 'apply':       //  TODO ==>
+            case 'apply': 
                 return taskList.map((e,i) => 
                     <div className="item" key={i}>
                         <div className="li">
@@ -159,7 +159,7 @@ export default function     TaskItem(params) {
                                             deform_Skills(e.role, skill).map(e => 
                                                 <span key={e.index}>
                                                     {
-                                                        location.pathname.indexOf("/zh") === -1 ? e.en : e.zh
+                                                        i18n.language === 'en' ? e.en : e.zh
                                                     }
                                                 </span>
                                             )
@@ -209,7 +209,7 @@ export default function     TaskItem(params) {
                                             deform_Skills(e.task.role, skill).map(e => 
                                                 <span key={e.index}>
                                                     {
-                                                        location.pathname.indexOf("/zh") === -1 ? e.en : e.zh
+                                                        i18n.language === 'en' === -1 ? e.en : e.zh
                                                     }
                                                 </span>
                                             )
@@ -273,7 +273,7 @@ export default function     TaskItem(params) {
                                             deform_Skills(e.task.role, skill).map(e => 
                                                 <span key={e.index}>
                                                     {
-                                                        location.pathname.indexOf("/zh") === -1 ? e.en : e.zh
+                                                        i18n.language === 'en' === -1 ? e.en : e.zh
                                                     }
                                                 </span>
                                             )

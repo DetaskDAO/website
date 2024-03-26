@@ -5,12 +5,12 @@ import { useRouter } from 'next/router'
 import { useAccount } from 'wagmi';
 import Computing_time from '../components/Computing_time';
 
-import { deform_Skills } from '../utils/Deform'
-import { searchTask } from '../http/_api/public';
-import { useTranslation } from 'next-i18next';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { getSillTreeMap } from '../http/_api/task';
-import { taskCurrency } from '../utils/Currency';
+import { deform_Skills } from '@/utils/Deform'
+import { searchTask } from '@/request/_api/public';
+import i18n from 'i18next';
+import { useTranslation } from "react-i18next";
+import { getSillTreeMap } from '@/request/_api/task';
+import { taskCurrency } from '@/utils/Currency';
 
 export default function Projects() {
 
@@ -68,7 +68,7 @@ export default function Projects() {
                 if(data){
                     data.map(e => {
                         console.log(e);
-                        e.currency = e.currency === 'USD' ? 'USDT' : e.currency;
+                        e.currency = e.currency === 'USD' ? 'USDC' : e.currency;
                         e.budget = taskCurrency(e.currency, e.budget);
                         e.role = deform_Skills(e.role, skill);
                         
@@ -285,8 +285,7 @@ export default function Projects() {
             }
         })
 
-        lang = location.pathname.indexOf("/zh") === -1 ? "en" : "zh";
-        setLang(lang);
+        
         getTask()
     }
 
@@ -297,6 +296,11 @@ export default function Projects() {
     useEffect(() => {
         init()
     },[])
+
+    useEffect(() => {
+        lang = i18n.language;
+        setLang(lang);
+    },[i18n.language])
 
     return <div className="Projects">
         <div className='banner'>
@@ -355,7 +359,7 @@ export default function Projects() {
                                                 e.role.map((ele,index) => 
                                                     <span className='tags-li' key={index}>
                                                         {
-                                                            location.pathname.indexOf("/zh") === -1 ? 
+                                                            lang === 'en' ? 
                                                             ele.en
                                                             :
                                                             ele.zh
@@ -404,12 +408,4 @@ export default function Projects() {
         </div>
         </div>
     </div>
-}
-
-export async function getStaticProps({ locale }) {
-    return {
-      props: {
-        ...(await serverSideTranslations(locale)),
-      },
-    };
 }

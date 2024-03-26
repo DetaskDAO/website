@@ -2,16 +2,16 @@ import { message, Pagination } from "antd";
 import { useEffect, useRef, useState } from "react";
 import { useAccount, useContractWrite } from 'wagmi'
 import { useRouter } from 'next/router'
-import { ConfigTask } from "../../controller";
+import { ConfigTask } from "../../src/controller";
 import TaskItem from "../../components/CustomItem/TaskItem";
 
 import qs from 'querystring';
-import { hashPending, searchTask } from "../../http/_api/public";
-import { deleteApply, getApplyList } from "../../http/_api/task";
-import { getOrderFinish, getOrderList } from "../../http/_api/order";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { useTranslation } from "next-i18next";
-import { taskCurrency } from "../../utils/Currency";
+import { hashPending, searchTask } from "@/request/_api/public";
+import { deleteApply, getApplyList } from "@/request/_api/task";
+import { getOrderFinish, getOrderList } from "@/request/_api/order";
+import i18n from 'i18next';
+import { useTranslation } from "react-i18next";
+import { taskCurrency } from "@/utils/Currency";
 
 export default function Userprojects() {
 
@@ -122,7 +122,7 @@ export default function Userprojects() {
                 setPageConfig({...pageConfig});
                 selectData = res.data.list ? res.data.list : [];
                 selectData.map(e => {
-                    e.currency = e.currency === 'USD' ? 'USDT' : e.currency;
+                    e.currency = e.currency === 'USD' ? 'USDC' : e.currency;
                     e.budget = taskCurrency(e.currency, e.budget);
                 })
                 setSelectData([...selectData]);
@@ -142,7 +142,7 @@ export default function Userprojects() {
             pageConfig.total = res.data.total;
             setPageConfig({...pageConfig});
             data.map(e => {
-                e.task.currency = e.task.currency === 'USD' ? 'USDT' : e.task.currency;
+                e.task.currency = e.task.currency === 'USD' ? 'USDC' : e.task.currency;
                 e.task.budget = taskCurrency(e.task.currency, e.task.budget);
 
                 arr.push({...e.task, status: e.status});
@@ -263,12 +263,4 @@ export default function Userprojects() {
             </div>
         </div>
     )
-}
-
-export async function getStaticProps({ locale }) {
-    return {
-      props: {
-        ...(await serverSideTranslations(locale)),
-      },
-    };
 }

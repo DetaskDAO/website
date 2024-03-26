@@ -1,11 +1,11 @@
 import { CameraFilled, CameraOutlined, UploadOutlined } from "@ant-design/icons";
 import { Button, Input, message, Modal, Upload } from "antd";
-import { useTranslation } from "next-i18next";
+import { useTranslation } from "react-i18next";
 import { useEffect, useState } from "react";
 import { useAccount } from "wagmi";
-import { getSillTreeMap } from "../../http/_api/task";
-import { updateUserInfo } from "../../http/_api/user";
-import { HashAvatar } from "../../utils/HashAvatar";
+import { getSillTreeMap } from "@/request/_api/task";
+import { updateUserInfo } from "@/request/_api/user";
+import { HashAvatar } from "@/utils/HashAvatar";
 import SkillsCard from "../CustomCard/SkillsCard";
 import { uploadImageProps } from "../upload/avatar";
 
@@ -122,7 +122,7 @@ export default function ModifyUserModal(params) {
         footer={null} 
         open={status} 
         onCancel={handleCancel}
-        // closeIcon= {<Button>Save Profile</Button>}
+        // closeIcon= {<Button>Save</Button>}
         closable={false}
         maskClosable
     >
@@ -136,17 +136,21 @@ export default function ModifyUserModal(params) {
                 {...uploadImageProps}
                 beforeUpload= {
                     (info) => {
-                        const isLt2M = info.size / 1024 / 1024 < 4
-                        if(!isLt2M){
-                            message.error('Must smaller than 4MB!')
+                        const formatArr = ["image/jpeg","image/png","image/svg+xml","image/gif"]
+                        let isImage = false
+                        formatArr.map((e)=>{
+                            if ( info.type === e ) {
+                            isImage = true
+                            }
+                        })
+                        if (!isImage) {
+                            message.error("You can only upload JPG/PNG file!");
                             return false
                         }
-                        const isPNG = info.type === 'image/png';
-                        if (!isPNG) {
-                            message.error(`${info.name} is not a png file`);
-                            return false
+                        const isLt100M = info.size / 1024 / 1024 < 4;
+                        if (!isLt100M) {
+                            message.error("Image must smaller than 4MB!");
                         }
-                        return true
                     }
                 }
                 fileList={fileList}

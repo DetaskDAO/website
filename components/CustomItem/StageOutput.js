@@ -1,9 +1,9 @@
 import { Button, Divider, Modal } from "antd";
-import { useTranslation } from "next-i18next";
+import { useTranslation } from "react-i18next";
 import { useEffect, useState } from "react";
-import { ConvertToken, ConvertTokenAddress, Currency } from "../../utils/Currency";
-import { download } from "../../utils/download";
-import { getDate } from "../../utils/GetDate";
+import { ConvertToken, ConvertTokenAddress, Currency } from "@/utils/Currency";
+import { download } from "@/utils/download";
+import { getDate } from "@/utils/GetDate";
 
 
 export default function StageOutput(params) {
@@ -360,7 +360,11 @@ export default function StageOutput(params) {
                 <span>{t("order.delivery-date")}:</span>
                 {
                     getDate(
-                        new Date().getTime() + (detail?.deliveryDate * 24 * 60 * 60 * 1000), 'd'
+                        Order && Order.state !== 0 ? 
+                        (new Date(Order.start_at).getTime()) + (detail?.deliveryDate * 24 * 60 * 60 * 1000)
+                        :
+                        new Date().getTime() + (detail?.deliveryDate * 24 * 60 * 60 * 1000)
+                        , 'd'
                     )
                 }
             </p>

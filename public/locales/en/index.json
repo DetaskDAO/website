@@ -1,8 +1,8 @@
 {
     "title": "DETASK - ",
-    "title2": "Trust Web3 Freelance Solution",
-    "btn1": "Post a task",
-    "btn2": "Explore task",
+    "title2": "Trusted Web3 Freelance Solution",
+    "btn1": "Post a Task",
+    "btn2": "Explore Tasks",
     "number": {
         "tasks": "Tasks",
         "members": "Members",
@@ -23,16 +23,16 @@
         }
     },
     "ucan": {
-        "title": "Find developer/tasks",
+        "title": "Find Developers/Tasks",
         "item1": {
-            "title": "Find developer",
+            "title": "Find Developers",
             "p1": "As a project owner, be free to post a task.",
-            "p2": "Choose developer by SBT credentialing.",
+            "p2": "Choose developers by SBT credentialing.",
             "p3": "Pay with token , controled by smart contract.",
             "p4": "Track progress until task completion."
         },
         "item2": {
-            "title": "Find tasks",
+            "title": "Find Tasks",
             "p1": "As a developer, you can explore task.",
             "p2": "Offer the bid with a plan.",
             "p3": "Try best to do the task.",
@@ -40,7 +40,7 @@
         }
     },
     "comment": {
-        "title": "User comments",
+        "title": "User Comments",
         "item1": {
             "skill": "Freelancer Web3 developer",
             "content": "Detask is the best partner for Web3 development and I can always find the right person to complete my projects."

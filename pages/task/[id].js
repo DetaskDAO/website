@@ -6,27 +6,27 @@ import { useAccount, useContractWrite, useSigner, useWaitForTransaction } from '
 import { useRouter } from 'next/router';
 import { ethers } from "ethers";
 
-import { ConfigTask, useContracts } from '../../controller';
+import { ConfigTask, useContracts } from '../../src/controller';
 
-import { deform_Skills } from '../../utils/Deform';
+import { deform_Skills } from '@/utils/Deform';
 import ApplyTaskModal from '../../components/CustomModal/ApplyTaskModal';
 import Computing_time from '../../components/Computing_time';
-import { getUserInfo, searchTaskDetail, updateUserInfo } from '../../http/_api/public';
+import { getUserInfo, searchTaskDetail, updateUserInfo } from '@/request/_api/public';
 import qs from 'querystring';
-import { createApply, getApplyStatus, deleteApply, updateApplyInfo, getSillTreeMap } from '../../http/_api/task';
-import { getJwt } from '../../utils/GetJwt';
-import { GetSignature } from '../../utils/GetSignature';
+import { createApply, getApplyStatus, deleteApply, updateApplyInfo, getSillTreeMap } from '@/request/_api/task';
+import { GetSignature } from '@/utils/GetSignature';
 import ConnectModal from '../../components/CustomModal/ConnectModal';
-import { useTranslation } from 'next-i18next';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { taskCurrency, taskCurrencyValue } from '../../utils/Currency';
-import { download } from '../../utils/download';
+import { taskCurrency, taskCurrencyValue } from '@/utils/Currency';
+import { download } from '@/utils/download';
+import i18n from 'i18next';
+import { useTranslation } from "react-i18next";
+import { constans } from "@/utils/constans";
 
 export default function Task() {
-    
     const { t } = useTranslation("task");
     const router = useRouter();
     const { address } = useAccount();
+    const { getToken } = constans();
 
     const { write: Apply, data: ApplyData, isLoading: applyLoading } = useContractWrite({
         ...ConfigTask("applyFor"),
@@ -87,11 +87,10 @@ export default function Task() {
 
     const showModal = ()=>{
         // 判断是否登陆 && 是否签名 && token有效期
-        const token = localStorage.getItem(`session.${address?.toLowerCase()}`);
         if (!address) {
             setIsModalVisible(true)
             return
-        }else if(!token || !getJwt(token)){
+        }else if(!getToken()){
             // 获取签名
             GetSignature({address:address,signer:signer});
             return  
@@ -268,7 +267,7 @@ export default function Task() {
             if (res.code === 0 && res.data.list) {
                 detail = res.data.list[0];
                 detail.role = deform_Skills(detail.role, skill?.data);
-                detail.currency = detail.currency === 'USD' ? 'USDT' : detail.currency;
+                detail.currency = detail.currency === 'USD' ? 'USDC' : detail.currency;
                 detail.budget = taskCurrency(detail.currency,detail.budget);
                 detail.desc = JSON.parse(detail.attachment).desc;
                 detail.suffix = JSON.parse(detail.attachment).suffix;
@@ -328,7 +327,7 @@ export default function Task() {
                             {
                                 detail.role.map((e,i) => <span key={i}>
                                     {
-                                        location.pathname.indexOf("/zh") === -1 ? 
+                                        i18n.language === 'en' ? 
                                         e.en
                                         :
                                         e.zh
@@ -393,7 +392,7 @@ export default function Task() {
                         {
                             detail.role.map((e,i) => <div className="box" key={i}>
                                 {
-                                    location.pathname.indexOf("/zh") === -1 ? 
+                                    i18n.language === 'en' ? 
                                     e.en
                                     :
                                     e.zh
@@ -427,13 +426,3 @@ export default function Task() {
 
 
 }
-
-
-
-export async function getServerSideProps({ locale }) {
-    return {
-        props: {
-        ...(await serverSideTranslations(locale)),
-      },
-    };
-  }
