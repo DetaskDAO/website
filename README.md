@@ -47,8 +47,6 @@ NEXT_PUBLIC_CONTRACT_DEORDER=xxx          # DEORDER 合约地址
 NEXT_PUBLIC_CONTRACT_PERMIT2=xxx          # PERMIT2 合约地址
 NEXT_PUBLIC_CONTRACT_USDC=xxx             # USDC 合约地址
 
-NEXT_PUBLIC_INFURA_KEY=xxx              # INFURA KEY
-
 NEXT_PUBLIC_DEVELOPMENT_API=xxx         # API 地址
 NEXT_PUBLIC_DEVELOPMENT_UPLOAD=xxx      # UPLOAD 文件目录
 NEXT_PUBLIC_DEVELOPMENT_FILE=xxx        # IPFS 节点
@@ -68,6 +66,6 @@ NEXT_PUBLIC_SOCIAL_MEDIUM_INVITE_URL="https://medium.com/@web3.detask"      # me
 npm i
 
 // 启动
-npm dev
+npm run dev
 
 ```
